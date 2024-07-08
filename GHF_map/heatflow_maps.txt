@@ -1,0 +1,159 @@
+gmt begin heatflow_maps png
+gmt subplot begin 4x2 -Fs10c -M0.7c/0.6c -A -B
+
+##1 ant heat flow
+gmt subplot set -Cs1.35c
+gmt basemap -R0/360/-90/-60 -JS0/-90/10c 
+gmt makecpt -Cvik -G-0.8/0.8 -T10/130
+gmt grdimage HR24_GHF_mean.grd -C -JS0/-90/10c -E200 -Q
+gmt coast -JS0/-90/10c -W0.5p
+gmt coast -JS0/-90/10c -W0.6p -A+ag -Bxa30 -BNwse --MAP_FRAME_TYPE=plain
+gmt plot -St0.35c -Gwhite -W0.6p -JS0/-90/10c <<EOF
+187.2 -82.995
+281.5 -79.667
+211.2 -81.658
+112.8 -66.77
+277.4 -77.903
+314.3 -79.55
+EOF
+gmt text -F+f7,black+jTL -Gwhite -JS0/-90/10c <<EOF
+176.5 -82.93 1
+279.5 -81.5 2
+225.2 -80.5 3
+110 -69.2 4
+275.4 -75.5 5
+320.3 -80.5 6
+240  -65 1 Crary Ice Rise
+234 -65 2 Skytrain Ice Rise
+227.5 -65 3 Siple Dome
+221 -65 4 Law Dome
+213 -65 5 Fletcher Promontory
+203 -65 6 Berkner Island
+
+EOF
+gmt colorbar -C -Ba20f10+l"Mean GHF (mW m^-2)" -Dx1c/-1.3c+w8c+e+h 
+
+##2 ant std
+gmt subplot set -Cs1.35c
+gmt basemap -R0/360/-90/-60 -JS0/-90/10c
+gmt makecpt -C60/60/60,250/250/250 -T0/20
+gmt grdimage HR24_GHF_std.grd -C -JS0/-90/10c -E200 -Qred
+gmt coast -JS0/-90/10c -W0.5p
+gmt coast -JS0/-90/10c -W0.6p -A+ag -Bxa30 -BNwse --MAP_FRAME_TYPE=plain
+gmt plot -St0.35c -Gwhite -W0.6p -JS0/-90/10c <<EOF
+187.2 -82.995
+281.5 -79.667
+211.2 -81.658
+112.8 -66.77
+277.4 -77.903
+314.3 -79.55
+EOF
+gmt text -F+f7,black+jTL -Gwhite -JS0/-90/10c <<EOF
+176.5 -82.93 1
+279.5 -81.5 2
+225.2 -80.5 3
+110 -69.2 4
+275.4 -75.5 5
+320.3 -80.5 6
+EOF
+gmt colorbar -C -Baf+l"Uncertainty GHF (mW m^-2)" -Dx1c/-1.3c+w8c+ef+h
+
+##3 crary heat flow 
+gmt subplot set -Cn-0.2c -Cs0.1c
+gmt basemap -R-155/-75/132/-84+r -JS0/-90/10c -Bxg20a20 -Byg4a4
+gmt makecpt -Cvik -G-0.8/0.8 -T10/130
+gmt grdimage HR24_GHF_mean.grd -C -JS0/-90/10c -E200 -Q
+gmt coast -W0.6p -R-155/-75/132/-84+r -JS0/-90/10c -A+ag
+gmt coast -W0.5p -R-155/-75/132/-84+r -JS0/-90/10c -Bxg20a20 -Byg4a4
+gmt plot -St0.45c -Gwhite -W0.6p -R-155/-75/132/-84+r -JS0/-90/10c <<EOF
+187.2 -82.995
+211.2 -81.658
+EOF
+gmt text -F+f8,black+jTL -Gwhite -R-155/-75/132/-84+r -JS0/-90/10c <<EOF
+185.5 -82.7 Crary Ice Rise
+-137.3 -81 Siple Dome
+EOF
+
+##4 crary std
+gmt subplot set -Cn-0.2c -Cs0.1c
+gmt basemap -R-155/-75/132/-84+r -JS0/-90/10c -Bxg20a20 -Byg4a4
+gmt makecpt -C60/60/60,250/250/250 -T0/20
+gmt grdimage HR24_GHF_std.grd -C -JS0/-90/10c -E200 -Qred
+gmt coast -W0.6p -R-155/-75/132/-84+r -JS0/-90/10c -A+ag
+gmt coast -W0.5p -R-155/-75/132/-84+r -JS0/-90/10c -Bxg20a20 -Byg4a4
+gmt plot -St0.45c -Gwhite -W0.6p -R-155/-75/132/-84+r -JS0/-90/10c <<EOF
+187.2 -82.995
+211.2 -81.658
+EOF
+gmt text -F+f8,black+jTL -Gwhite -R-155/-75/132/-84+r -JS0/-90/10c <<EOF
+185.5 -82.7 Crary Ice Rise
+-137.3 -81 Siple Dome
+EOF
+
+##5 skytrain heat flow
+gmt subplot set -Cn0.4c -Cs-0.2c
+gmt basemap -R270/-75/341.5/-78.8+r -JS0/-90/10c -Bxg20a20 -Byg4a4 
+gmt makecpt -Cvik -G-0.8/0.8 -T10/130
+gmt grdimage HR24_GHF_mean.grd -C -JS0/-90/10c -E200 -Q
+gmt coast -W0.6p -R270/-75/341.5/-78.8+r -JS0/-90/10c -A+ag
+gmt coast -W0.5p -R270/-75/341.5/-78.8+r -JS0/-90/10c -Bxg20a20 -Byg4a4 -BwsNE
+gmt plot -St0.45c -Gwhite -W0.6p -R270/-75/341.5/-78.8+r -JS0/-90/10c <<EOF
+281.5 -79.667
+277.4 -77.903
+314.3 -79.55
+EOF
+gmt text -F+f8,black+jTL -Gwhite -R270/-75/341.5/-78.8+r -JS0/-90/10c <<EOF
+280 -80 Skytrain Ice Rise
+274.7 -75.1 Fletcher Promontory
+308 -77.6 Berkner Island
+EOF
+
+##6 skytrain std
+gmt subplot set -Cn0.4c -Cs-0.2c
+gmt basemap -R270/-75/341.5/-78.8+r -JS0/-90/10c -Bxg20a20 -Byg4a4
+gmt makecpt -C60/60/60,250/250/250 -T0/20
+gmt grdimage HR24_GHF_std.grd -C -JS0/-90/10c -E200 -Qred
+gmt coast -W0.6p -R270/-75/341.5/-78.8+r -JS0/-90/10c -A+ag
+gmt coast -W0.5p -R270/-75/341.5/-78.8+r -JS0/-90/10c -Bxg20a20 -Byg4a4 -BwsNE
+gmt plot -St0.45c -Gwhite -W0.6p -R270/-75/341.5/-78.8+r -JS0/-90/10c <<EOF
+281.5 -79.667
+277.4 -77.903
+314.3 -79.55
+EOF
+gmt text -F+f8,black+jTL -Gwhite -R270/-75/341.5/-78.8+r -JS0/-90/10c <<EOF
+280 -80 Skytrain Ice Rise
+274.7 -75.1 Fletcher Promontory
+308 -77.6 Berkner Island
+EOF
+
+
+##7 law heat flow  
+gmt subplot set -Cn0.4c
+gmt basemap -R133/-69/95/-62+r -JS0/-90/10c -Bxg20a20 -Byg4a4
+gmt makecpt -Cvik -G-0.8/0.8 -T10/130
+gmt grdimage HR24_GHF_mean.grd -C -JS0/-90/10c -E200 -Q
+gmt coast -W0.6p -R133/-69/95/-62+r -JS0/-90/10c -A+ag
+gmt coast -W0.5p -R133/-69/95/-62+r -JS0/-90/10c -Bxg20a20 -Byg4a4 
+gmt plot -St0.45c -Gwhite -W0.6p -R133/-69/95/-62+r -JS0/-90/10c <<EOF
+112.8 -66.77
+EOF
+gmt text -F+f8,black+jTL -Gwhite -R133/-69/95/-62+r -JS0/-90/10c <<EOF
+113.5 -68.8 Law Dome
+EOF
+
+##8 law std 
+gmt subplot set -Cn0.4c
+gmt basemap -R133/-69/95/-62+r -JS0/-90/10c -Bxg20a20 -Byg4a4
+gmt makecpt -C60/60/60,250/250/250 -T0/20
+gmt grdimage HR24_GHF_std.grd -C -JS0/-90/10c -E200 -Qred
+gmt coast -W0.6p -R133/-69/95/-62+r -JS0/-90/10c -A+ag
+gmt coast -W0.5p -R133/-69/95/-62+r -JS0/-90/10c -Bxg20a20 -Byg4a4
+gmt plot -St0.45c -Gwhite -W0.6p -R133/-69/95/-62+r -JS0/-90/10c <<EOF
+112.8 -66.77
+EOF
+gmt text -F+f8,black+jTL -Gwhite -R133/-69/95/-62+r -JS0/-90/10c <<EOF
+113.5 -68.8 Law Dome
+EOF
+
+gmt subplot end
+gmt end show
