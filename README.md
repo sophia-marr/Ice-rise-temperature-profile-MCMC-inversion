@@ -3,7 +3,7 @@
 Outline:
 
 -	GHF_map  
-o	The script ‘heatflow_maps.txt’ generates a ‘heatflow_maps.png’, a series of maps of Antarctic heat flow, with close-ups of ice rise locations.
+o	The script ‘heatflow_maps.txt’ generates ‘heatflow_maps.png’, a series of maps of Antarctic heat flow, with close-ups of ice rise locations.
 -	ice_rises  
 o	This directory contains files of data pertaining to the 6 ice rises examined here: the lat/long coordinates (of the boreholes) (‘icerise_coords.txt’), their polar stereographic xy coordinates (km) (‘icerise_coords_ps.txt’), and the heat flow mean and standard deviation (mW) extracted from the grids from Hazzard & Richards (2024) at each of these locations (‘icerise_ghf.txt’).  
 o	‘temperature_profiles’ contains the englacial temperature profiles of each ice rise, with columns of temperature (deg C) and height above bedrock (m).  
