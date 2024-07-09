@@ -13,4 +13,6 @@ o	The script ‘spatial_uncertainty.sh’ runs the python code ‘ice_rise_rand.
 o	For each ice rise the script then samples the heat flow grid at each random point and calculates the spatial, local and total deviations.  
 o	The larger value out of the total weighted and total unweighted deviations is used to set the prior in the inversion.  
 -	MCMC_inversion    
-o	The notebook ‘ice_rise_temperature_profile_MCMC_inversion.ipynb’ performs inversion of the ice rise temperature profiles. The code is adapted from Montelli & Kingslake (2023) and this original code is in ‘borehole_temperature_models’.  
+o	The notebook ‘ice_rise_temperature_profile_MCMC_inversion.ipynb’ performs inversion of the ice rise temperature profiles. The code is adapted from Montelli & Kingslake (2023) and this original code is in ‘borehole_temperature_models’.
+o	An ice rise from each of three different areas in Antarctica is examined: Crary (Ross ice shelf), Skytrain (Ronne ice shelf) and Law Dome (East Antarctica). Code for three further ice rises (Siple Dome, Fletcher Promontory and Berkner Island) is also given.
+
